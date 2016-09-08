@@ -8,6 +8,11 @@
     fill: none;
 }
 
+.dots {
+  stroke: crimson;
+  fill-opacity: 0.7;
+}
+
 div.tooltip {
     position: absolute;
     text-align: center;

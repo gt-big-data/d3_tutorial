@@ -94,7 +94,9 @@ d3.csv('pokemon.csv', type, function(error, data) {
         return d.Legendary == "True" ? '#2ecc71': 'steelblue';
       })
       .on('mouseover', function(d) {
-        this.setAttribute('r', 8);
+        d3.select(this)
+          .attr('r', 8);
+
         tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
@@ -103,7 +105,9 @@ d3.csv('pokemon.csv', type, function(error, data) {
             .style("top", (d3.event.pageY - 28) + "px");
       })
       .on('mouseout', function(d) {
-        this.setAttribute('r', rScale(d.HP));
+        d3.select(this)
+          .attr('r', rScale(d.HP));
+          
         tooltip.transition()
             .duration(500)
             .style("opacity", 0);
